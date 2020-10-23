@@ -6863,29 +6863,6 @@ Source: http://www3.alps.co.jp/WebObjects/catalog.woa/PDF/E/Switch/Tact/SKHM/SKH
 <smd name="CATHODE2" x="2.8" y="0" dx="3.81" dy="1.9304" layer="16" roundness="50" rot="R90"/>
 <smd name="BLUE2" x="5.6" y="-2.8" dx="3.81" dy="1.9304" layer="16" roundness="50" rot="R90"/>
 </package>
-<package name="TSOT23-6_DDC">
-<description>&lt;b&gt;DDC (R-PDSO-G6)&lt;/b&gt; PLASTIC SMALL OUTLINE PACKAGE&lt;p&gt;
-Source: http://focus.ti.com/lit/ds/symlink/tps61070.pdf</description>
-<wire x1="-1.45" y1="0.8" x2="1.45" y2="0.8" width="0.1016" layer="21"/>
-<wire x1="1.45" y1="0.8" x2="1.45" y2="-0.8" width="0.1016" layer="21"/>
-<wire x1="1.45" y1="-0.8" x2="-1.45" y2="-0.8" width="0.1016" layer="21"/>
-<wire x1="-1.45" y1="-0.8" x2="-1.45" y2="0.8" width="0.1016" layer="21"/>
-<smd name="1" x="-0.95" y="-1.25" dx="0.6" dy="0.8" layer="1"/>
-<smd name="2" x="0" y="-1.25" dx="0.6" dy="0.8" layer="1"/>
-<smd name="3" x="0.95" y="-1.25" dx="0.6" dy="0.8" layer="1"/>
-<smd name="4" x="0.95" y="1.25" dx="0.6" dy="0.8" layer="1"/>
-<smd name="5" x="0" y="1.25" dx="0.6" dy="0.8" layer="1"/>
-<smd name="6" x="-0.95" y="1.25" dx="0.6" dy="0.8" layer="1"/>
-<text x="-1.27" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.27" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-1.2" y1="-1.5" x2="-0.7" y2="-0.825" layer="51" rot="R180"/>
-<rectangle x1="-0.25" y1="-1.5" x2="0.25" y2="-0.825" layer="51" rot="R180"/>
-<rectangle x1="0.7" y1="-1.5" x2="1.2" y2="-0.825" layer="51" rot="R180"/>
-<rectangle x1="0.7" y1="0.825" x2="1.2" y2="1.5" layer="51"/>
-<rectangle x1="-0.25" y1="0.825" x2="0.25" y2="1.5" layer="51"/>
-<rectangle x1="-1.2" y1="0.825" x2="-0.7" y2="1.5" layer="51"/>
-<rectangle x1="-1.425" y1="-0.75" x2="0" y2="0" layer="21"/>
-</package>
 </packages>
 <symbols>
 <symbol name="NORMOPEN_SHIELD">
@@ -6956,20 +6933,6 @@ Source: http://focus.ti.com/lit/ds/symlink/tps61070.pdf</description>
 <circle x="2.54" y="10.16" radius="0.127" width="0.508" layer="94"/>
 <circle x="2.54" y="-12.7" radius="0.127" width="0.508" layer="94"/>
 </symbol>
-<symbol name="TPS61070">
-<wire x1="-7.62" y1="10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
-<wire x1="10.16" y1="10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="10.16" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
-<text x="-7.62" y="11.43" size="1.778" layer="95">&gt;NAME</text>
-<text x="-7.62" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="SW" x="-10.16" y="7.62" length="short" direction="in"/>
-<pin name="VBAT" x="-10.16" y="2.54" length="short" direction="in"/>
-<pin name="EN" x="-10.16" y="-2.54" length="short" direction="in"/>
-<pin name="GND" x="-10.16" y="-7.62" length="short" direction="pwr"/>
-<pin name="FB" x="12.7" y="-2.54" length="short" direction="in" rot="R180"/>
-<pin name="VOUT" x="12.7" y="7.62" length="short" direction="pas" rot="R180"/>
-</symbol>
 </symbols>
 <devicesets>
 <deviceset name="SKHMP*E010" prefix="S">
@@ -7015,51 +6978,6 @@ COM-09264 (Diffuse)</description>
 <technologies>
 <technology name="">
 <attribute name="PROD_ID" value="DIO-09434"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TPS6107*" prefix="IC">
-<description>&lt;b&gt;90% EFFICIENT SYNCHRONOUS BOOST CONVERTER WITH 600-mA SWITCH&lt;/b&gt;&lt;p&gt;
-Source: http://focus.ti.com/lit/ds/symlink/tps61070.pdf</description>
-<gates>
-<gate name="G$1" symbol="TPS61070" x="0" y="0"/>
-</gates>
-<devices>
-<device name="DDC" package="TSOT23-6_DDC">
-<connects>
-<connect gate="G$1" pin="EN" pad="3"/>
-<connect gate="G$1" pin="FB" pad="4"/>
-<connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="SW" pad="1"/>
-<connect gate="G$1" pin="VBAT" pad="6"/>
-<connect gate="G$1" pin="VOUT" pad="5"/>
-</connects>
-<technologies>
-<technology name="0">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="TPS61070DDCR" constant="no"/>
-<attribute name="OC_FARNELL" value="1461062" constant="no"/>
-<attribute name="OC_NEWARK" value="64M3125" constant="no"/>
-</technology>
-<technology name="1">
-<attribute name="MF" value="TEXAS INSTRUMENT CONNECTORS" constant="no"/>
-<attribute name="MPN" value="TPS61071DDCR" constant="no"/>
-<attribute name="OC_FARNELL" value="1412515" constant="no"/>
-<attribute name="OC_NEWARK" value="21J9232" constant="no"/>
-</technology>
-<technology name="2">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="TPS61072DDCR" constant="no"/>
-<attribute name="OC_FARNELL" value="unknown" constant="no"/>
-<attribute name="OC_NEWARK" value="30M1829" constant="no"/>
-</technology>
-<technology name="3">
-<attribute name="MF" value="" constant="no"/>
-<attribute name="MPN" value="TPS61073DDCRG4" constant="no"/>
-<attribute name="OC_FARNELL" value="1755459" constant="no"/>
-<attribute name="OC_NEWARK" value="52M6122" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -7125,70 +7043,6 @@ Source: http://focus.ti.com/lit/ds/symlink/tps61070.pdf</description>
 <connect gate="G1" pin="B" pad="2"/>
 <connect gate="G1" pin="C" pad="1"/>
 <connect gate="G1" pin="E" pad="3"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
-<library name="inductor-sumida">
-<description>&lt;b&gt;Sumida Power Inductors&lt;/b&gt;&lt;p&gt;
-&lt;p&gt;THIS LIBRARY IS PROVIDED AS IS AND WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED.&lt;br&gt;
-USE AT YOUR OWN RISK!&lt;p&gt;
-&lt;author&gt;Copyright (C) 2008, Bob Starr&lt;br&gt; http://www.bobstarr.net&lt;br&gt;&lt;/author&gt;</description>
-<packages>
-<package name="CR43">
-<description>POWER INDUCTOR</description>
-<wire x1="-2.5" y1="3" x2="2.5" y2="3" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="3" x2="2.5" y2="-3" width="0.2032" layer="21"/>
-<wire x1="2.5" y1="-3" x2="-2.5" y2="-3" width="0.2032" layer="21"/>
-<wire x1="-2.5" y1="-3" x2="-2.5" y2="3" width="0.2032" layer="21"/>
-<wire x1="-2.25" y1="1.75" x2="-2.25" y2="-1.75" width="0.2032" layer="51"/>
-<wire x1="2.25" y1="1.75" x2="2.25" y2="-1.75" width="0.2032" layer="51"/>
-<wire x1="-2.25" y1="1.75" x2="-0.5" y2="2.75" width="0.2032" layer="51" curve="-36.869898"/>
-<wire x1="2.25" y1="1.75" x2="0.5" y2="2.75" width="0.2032" layer="51" curve="31.048222"/>
-<wire x1="-0.5" y1="2.75" x2="0.5" y2="2.75" width="0.2032" layer="51" curve="180"/>
-<wire x1="2.25" y1="-1.75" x2="0.5" y2="-2.75" width="0.2032" layer="51" curve="-36.869898"/>
-<wire x1="-2.25" y1="-1.75" x2="-0.5" y2="-2.75" width="0.2032" layer="51" curve="31.048222"/>
-<wire x1="0.5" y1="-2.75" x2="-0.5" y2="-2.75" width="0.2032" layer="51" curve="180"/>
-<smd name="1" x="0" y="1.75" dx="4.5" dy="2" layer="1"/>
-<smd name="2" x="0" y="-1.75" dx="4.5" dy="2" layer="1"/>
-<text x="-2.2225" y="3.4925" size="1.016" layer="25" ratio="18">&gt;NAME</text>
-<text x="-2.2225" y="-4.1275" size="0.8128" layer="27" ratio="10">&gt;VALUE</text>
-</package>
-</packages>
-<symbols>
-<symbol name="L">
-<wire x1="-3.81" y1="0.635" x2="-1.905" y2="0.635" width="0.254" layer="94" curve="-180"/>
-<wire x1="-1.905" y1="0.635" x2="0" y2="0.635" width="0.254" layer="94" curve="-180"/>
-<wire x1="0" y1="0.635" x2="1.905" y2="0.635" width="0.254" layer="94" curve="-180"/>
-<wire x1="1.905" y1="0.635" x2="3.81" y2="0.635" width="0.254" layer="94" curve="-180"/>
-<wire x1="-3.81" y1="0.635" x2="-3.81" y2="0" width="0.254" layer="94"/>
-<wire x1="3.81" y1="0.635" x2="3.81" y2="0" width="0.254" layer="94"/>
-<wire x1="-3.81" y1="0" x2="-5.08" y2="0" width="0.1524" layer="94"/>
-<wire x1="3.81" y1="0" x2="5.08" y2="0" width="0.1524" layer="94"/>
-<wire x1="-3.4925" y1="2.2225" x2="3.4925" y2="2.2225" width="0.254" layer="94"/>
-<wire x1="-3.4925" y1="2.8575" x2="3.4925" y2="2.8575" width="0.254" layer="94"/>
-<text x="-3.81" y="3.81" size="1.778" layer="95">&gt;NAME</text>
-<text x="-3.81" y="-2.54" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="2" x="5.08" y="0" visible="off" length="point" direction="pas" swaplevel="1" rot="R180"/>
-<pin name="1" x="-5.08" y="0" visible="off" length="point" direction="pas" swaplevel="1"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="CR43" prefix="L">
-<description>Power Inductor</description>
-<gates>
-<gate name="G$1" symbol="L" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="CR43">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7270,7 +7124,6 @@ drill 1.0 mm</description>
 <part name="S2" library="Gumix" deviceset="SKHMP*E010" device="" technology="S"/>
 <part name="R2" library="resistor" deviceset="R-EU_" device="R1206" value="10k"/>
 <part name="R3" library="resistor" deviceset="R-EU_" device="R1206" value="10k"/>
-<part name="3V" library="supply1" deviceset="V+" device="" value="1-3V"/>
 <part name="4V" library="supply1" deviceset="V+" device="" value="3.9V"/>
 <part name="T1" library="transistor" deviceset="2N3904" device=""/>
 <part name="T2" library="transistor" deviceset="2N3904" device=""/>
@@ -7286,17 +7139,6 @@ drill 1.0 mm</description>
 <part name="4V1" library="supply1" deviceset="V+" device="" value="3.9V"/>
 <part name="4V2" library="supply1" deviceset="V+" device="" value="3.9V"/>
 <part name="4V3" library="supply1" deviceset="V+" device="" value="3.9V"/>
-<part name="L1" library="inductor-sumida" deviceset="CR43" device="" value="4.7μ"/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="IC1" library="Gumix" deviceset="TPS6107*" device="DDC" technology="0"/>
-<part name="4V4" library="supply1" deviceset="V+" device="" value="3.9V"/>
-<part name="R9" library="resistor" deviceset="R-EU_" device="R1206" value="1.5M"/>
-<part name="R10" library="resistor" deviceset="R-EU_" device="R1206" value="220k"/>
-<part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="C2" library="rcl" deviceset="C-EU" device="C1206" value="10μ"/>
-<part name="C3" library="rcl" deviceset="C-EU" device="C1206" value="10μ"/>
-<part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="4V5" library="supply1" deviceset="V+" device="" value="3.9V"/>
@@ -7341,9 +7183,6 @@ drill 1.0 mm</description>
 <instance part="R3" gate="G$1" x="33.02" y="55.88" smashed="yes" rot="R270">
 <attribute name="NAME" x="34.5186" y="59.69" size="1.778" layer="95" rot="R270"/>
 <attribute name="VALUE" x="29.718" y="59.69" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="3V" gate="1" x="-38.1" y="-5.08" smashed="yes">
-<attribute name="VALUE" x="-40.64" y="-7.62" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="4V" gate="1" x="-48.26" y="66.04" smashed="yes">
 <attribute name="VALUE" x="-50.8" y="63.5" size="1.778" layer="96" rot="R90"/>
@@ -7398,45 +7237,6 @@ drill 1.0 mm</description>
 <instance part="4V3" gate="1" x="86.36" y="66.04" smashed="yes">
 <attribute name="VALUE" x="83.82" y="63.5" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="L1" gate="G$1" x="-27.94" y="-12.7" smashed="yes">
-<attribute name="NAME" x="-31.75" y="-8.89" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-31.75" y="-15.24" size="1.778" layer="96"/>
-</instance>
-<instance part="GND2" gate="1" x="-38.1" y="-35.56" smashed="yes">
-<attribute name="VALUE" x="-40.64" y="-38.1" size="1.778" layer="96"/>
-</instance>
-<instance part="IC1" gate="G$1" x="-10.16" y="-20.32" smashed="yes">
-<attribute name="NAME" x="-17.78" y="-8.89" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-17.78" y="-33.02" size="1.778" layer="96"/>
-</instance>
-<instance part="4V4" gate="1" x="17.78" y="-5.08" smashed="yes">
-<attribute name="VALUE" x="15.24" y="-7.62" size="1.778" layer="96" rot="R90"/>
-</instance>
-<instance part="R9" gate="G$1" x="7.62" y="-17.78" smashed="yes" rot="R270">
-<attribute name="NAME" x="9.1186" y="-13.97" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="4.318" y="-13.97" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="R10" gate="G$1" x="7.62" y="-27.94" smashed="yes" rot="R270">
-<attribute name="NAME" x="9.1186" y="-24.13" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="4.318" y="-24.13" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="GND5" gate="1" x="7.62" y="-35.56" smashed="yes">
-<attribute name="VALUE" x="5.08" y="-38.1" size="1.778" layer="96"/>
-</instance>
-<instance part="C2" gate="G$1" x="-38.1" y="-22.86" smashed="yes">
-<attribute name="NAME" x="-36.576" y="-22.479" size="1.778" layer="95"/>
-<attribute name="VALUE" x="-36.576" y="-27.559" size="1.778" layer="96"/>
-</instance>
-<instance part="C3" gate="G$1" x="17.78" y="-22.86" smashed="yes">
-<attribute name="NAME" x="19.304" y="-22.479" size="1.778" layer="95"/>
-<attribute name="VALUE" x="19.304" y="-27.559" size="1.778" layer="96"/>
-</instance>
-<instance part="GND6" gate="1" x="-22.86" y="-35.56" smashed="yes">
-<attribute name="VALUE" x="-25.4" y="-38.1" size="1.778" layer="96"/>
-</instance>
-<instance part="GND7" gate="1" x="17.78" y="-35.56" smashed="yes">
-<attribute name="VALUE" x="15.24" y="-38.1" size="1.778" layer="96"/>
-</instance>
 <instance part="GND8" gate="1" x="17.78" y="7.62" smashed="yes">
 <attribute name="VALUE" x="15.24" y="5.08" size="1.778" layer="96"/>
 </instance>
@@ -7483,26 +7283,6 @@ drill 1.0 mm</description>
 <pinref part="D1" gate="G$1" pin="CATHODE1"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="50.8" y1="0" x2="50.8" y2="-2.54" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R10" gate="G$1" pin="2"/>
-<pinref part="GND5" gate="1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="-22.86" y1="-33.02" x2="-22.86" y2="-27.94" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="GND"/>
-<wire x1="-22.86" y1="-27.94" x2="-20.32" y2="-27.94" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="C2" gate="G$1" pin="2"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="-38.1" y1="-27.94" x2="-38.1" y2="-33.02" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="GND7" gate="1" pin="GND"/>
-<pinref part="C3" gate="G$1" pin="2"/>
-<wire x1="17.78" y1="-33.02" x2="17.78" y2="-27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="S1" gate="G$1" pin="1.2"/>
@@ -7564,36 +7344,6 @@ drill 1.0 mm</description>
 <wire x1="83.82" y1="17.78" x2="86.36" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="4V3" gate="1" pin="V+"/>
 <wire x1="86.36" y1="17.78" x2="86.36" y2="63.5" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="3V" gate="1" pin="V+"/>
-<wire x1="-38.1" y1="-7.62" x2="-38.1" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="L1" gate="G$1" pin="1"/>
-<wire x1="-38.1" y1="-12.7" x2="-33.02" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="-38.1" y1="-20.32" x2="-38.1" y2="-17.78" width="0.1524" layer="91"/>
-<junction x="-38.1" y="-12.7"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<pinref part="IC1" gate="G$1" pin="VBAT"/>
-<wire x1="-38.1" y1="-17.78" x2="-38.1" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="-20.32" y1="-17.78" x2="-22.86" y2="-17.78" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="EN"/>
-<wire x1="-20.32" y1="-22.86" x2="-22.86" y2="-22.86" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-22.86" x2="-22.86" y2="-17.78" width="0.1524" layer="91"/>
-<wire x1="-22.86" y1="-17.78" x2="-38.1" y2="-17.78" width="0.1524" layer="91"/>
-<junction x="-38.1" y="-17.78"/>
-<junction x="-22.86" y="-17.78"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="VOUT"/>
-<wire x1="2.54" y1="-12.7" x2="7.62" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="1"/>
-<junction x="7.62" y="-12.7"/>
-<pinref part="4V4" gate="1" pin="V+"/>
-<wire x1="7.62" y1="-12.7" x2="17.78" y2="-12.7" width="0.1524" layer="91"/>
-<wire x1="17.78" y1="-12.7" x2="17.78" y2="-7.62" width="0.1524" layer="91"/>
-<pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="17.78" y1="-20.32" x2="17.78" y2="-12.7" width="0.1524" layer="91"/>
-<junction x="17.78" y="-12.7"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -7697,22 +7447,6 @@ drill 1.0 mm</description>
 <pinref part="T2" gate="G1" pin="E"/>
 <pinref part="D1" gate="G$1" pin="GREEN"/>
 <wire x1="58.42" y1="17.78" x2="58.42" y2="12.7" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$13" class="0">
-<segment>
-<pinref part="L1" gate="G$1" pin="2"/>
-<wire x1="-20.32" y1="-12.7" x2="-22.86" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="SW"/>
-</segment>
-</net>
-<net name="N$14" class="0">
-<segment>
-<pinref part="R9" gate="G$1" pin="2"/>
-<pinref part="R10" gate="G$1" pin="1"/>
-<pinref part="IC1" gate="G$1" pin="FB"/>
-<wire x1="2.54" y1="-22.86" x2="7.62" y2="-22.86" width="0.1524" layer="91"/>
-<junction x="7.62" y="-22.86"/>
 </segment>
 </net>
 <net name="N$15" class="0">
