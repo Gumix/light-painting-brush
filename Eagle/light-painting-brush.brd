@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.3">
+<eagle version="9.6.2">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
+<setting keepoldvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.05" unitdist="inch" unit="mm" style="dots" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="mm"/>
@@ -2579,16 +2580,23 @@ design rules under a new name.</description>
 <param name="slThermalsForVias" value="0"/>
 <param name="dpMaxLengthDifference" value="10mm"/>
 <param name="dpGapFactor" value="2.5"/>
-<param name="checkGrid" value="0"/>
 <param name="checkAngle" value="0"/>
 <param name="checkFont" value="1"/>
 <param name="checkRestrict" value="1"/>
+<param name="checkStop" value="0"/>
+<param name="checkValues" value="0"/>
+<param name="checkNames" value="1"/>
+<param name="checkWireStubs" value="1"/>
+<param name="checkPolygonWidth" value="0"/>
 <param name="useDiameter" value="13"/>
 <param name="maxErrors" value="50"/>
 </designrules>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="50mil"/>
+<param name="AutoGrid" value="1"/>
+<param name="Efforts" value="0"/>
+<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -2680,37 +2688,105 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U$1" library="avr-6" package="DIL20" value="TINY2313-*P*" x="19.05" y="20.32"/>
-<element name="C1" library="rcl" package="C1206" value="1μ" x="29.21" y="10.16" rot="MR180"/>
-<element name="R1" library="resistor" package="R1206" value="10k" x="5.715" y="13.335"/>
-<element name="S1" library="Gumix" package="SKHMPXE010" value="SKHMPSE010" x="24.13" y="3.81" rot="R180"/>
-<element name="S2" library="Gumix" package="SKHMPXE010" value="SKHMPSE010" x="38.1" y="17.78" rot="R180"/>
-<element name="R2" library="resistor" package="R1206" value="10k" x="31.75" y="4.445" rot="R90"/>
-<element name="R3" library="resistor" package="R1206" value="10k" x="4.445" y="17.78" rot="R90"/>
-<element name="T1" library="transistor" package="TO92" value="2N3904" x="44.45" y="8.255" rot="R270"/>
-<element name="T2" library="transistor" package="TO92" value="2N3904" x="39.37" y="8.255" rot="MR270"/>
-<element name="T3" library="transistor" package="TO92" value="2N3904" x="15.24" y="31.75" rot="R180"/>
-<element name="R6" library="resistor" package="R1206" value="5.6k" x="16.51" y="27.305" rot="R180"/>
-<element name="R4" library="resistor" package="R1206" value="10k" x="34.925" y="22.225" rot="MR180"/>
-<element name="R5" library="resistor" package="R1206" value="10k" x="34.925" y="18.415" rot="MR180"/>
-<element name="D1" library="Gumix" package="LED-RGB-THRU" value="LED-RGB-CC-THRUDIFFUSE" x="21.59" y="34.29">
+<element name="U$1" library="avr-6" package="DIL20" value="TINY2313-*P*" x="19.05" y="20.32" smashed="yes">
+<attribute name="NAME" x="5.5372" y="17.78" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="8.89" y="19.558" size="1.778" layer="27" ratio="10"/>
+</element>
+<element name="C1" library="rcl" package="C1206" value="1μ" x="29.21" y="10.16" smashed="yes" rot="MR180">
+<attribute name="NAME" x="27.94" y="8.89" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="27.94" y="12.7" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="R1" library="resistor" package="R1206" value="10k" x="5.715" y="13.335" smashed="yes">
+<attribute name="NAME" x="4.318" y="14.478" size="1.27" layer="25"/>
+<attribute name="VALUE" x="4.318" y="10.922" size="1.27" layer="27"/>
+</element>
+<element name="S1" library="Gumix" package="SKHMPXE010" value="SKHMPSE010" x="24.13" y="3.81" smashed="yes" rot="R180">
+<attribute name="NAME" x="26.67" y="0.635" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="26.67" y="8.255" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="S2" library="Gumix" package="SKHMPXE010" value="SKHMPSE010" x="38.1" y="17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="40.64" y="14.605" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="40.64" y="22.225" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R2" library="resistor" package="R1206" value="10k" x="31.75" y="4.445" smashed="yes" rot="R90">
+<attribute name="NAME" x="30.607" y="3.048" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="34.163" y="3.048" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="R3" library="resistor" package="R1206" value="10k" x="4.445" y="17.78" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.302" y="16.383" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="6.858" y="16.383" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="T1" library="transistor" package="TO92" value="2N3904" x="44.45" y="8.255" smashed="yes" rot="R270">
+<attribute name="NAME" x="45.085" y="5.08" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="43.18" y="5.08" size="1.27" layer="27" ratio="10" rot="R270"/>
+</element>
+<element name="T2" library="transistor" package="TO92" value="2N3904" x="39.37" y="8.255" smashed="yes" rot="MR270">
+<attribute name="NAME" x="38.735" y="5.08" size="1.27" layer="26" ratio="10" rot="MR270"/>
+<attribute name="VALUE" x="40.64" y="5.08" size="1.27" layer="28" ratio="10" rot="MR270"/>
+</element>
+<element name="T3" library="transistor" package="TO92" value="2N3904" x="15.24" y="31.75" smashed="yes" rot="R180">
+<attribute name="NAME" x="12.065" y="31.115" size="1.27" layer="25" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="12.065" y="33.02" size="1.27" layer="27" ratio="10" rot="R180"/>
+</element>
+<element name="R6" library="resistor" package="R1206" value="5.6k" x="16.51" y="27.305" smashed="yes" rot="R180">
+<attribute name="NAME" x="17.907" y="26.162" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="17.907" y="29.718" size="1.27" layer="27" rot="R180"/>
+</element>
+<element name="R4" library="resistor" package="R1206" value="10k" x="34.925" y="22.225" smashed="yes" rot="MR180">
+<attribute name="NAME" x="33.528" y="21.082" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="33.528" y="24.638" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="R5" library="resistor" package="R1206" value="10k" x="34.925" y="18.415" smashed="yes" rot="MR180">
+<attribute name="NAME" x="33.528" y="17.272" size="1.27" layer="26" rot="MR180"/>
+<attribute name="VALUE" x="33.528" y="20.828" size="1.27" layer="28" rot="MR180"/>
+</element>
+<element name="D1" library="Gumix" package="LED-RGB-THRU" value="LED-RGB-CC-THRUDIFFUSE" x="21.59" y="34.29" smashed="yes">
 <attribute name="PROD_ID" value="DIO-09434" x="21.59" y="34.29" size="1.778" layer="27" display="off"/>
 </element>
-<element name="R7" library="resistor" package="R1206" value="100" x="41.91" y="3.175"/>
-<element name="R8" library="resistor" package="R1206" value="100" x="35.56" y="4.445" rot="R90"/>
-<element name="L1" library="inductor-sumida" package="CR43" value="4.7μ" x="3.175" y="5.08"/>
-<element name="IC1" library="Gumix" package="TSOT23-6_DDC" value="TPS61070DDC" x="11.43" y="4.445">
-<attribute name="OC_NEWARK" value="64M3125" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
-<attribute name="MPN" value="TPS61070DDCR" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
-<attribute name="MF" value="" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
-<attribute name="OC_FARNELL" value="1461062" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
+<element name="R7" library="resistor" package="R1206" value="100" x="41.91" y="3.175" smashed="yes">
+<attribute name="NAME" x="40.513" y="4.318" size="1.27" layer="25"/>
+<attribute name="VALUE" x="40.513" y="0.762" size="1.27" layer="27"/>
 </element>
-<element name="R9" library="resistor" package="R1206" value="1.5M" x="10.16" y="10.16"/>
-<element name="R10" library="resistor" package="R1206" value="220k" x="17.78" y="10.16"/>
-<element name="C2" library="rcl" package="C1206" value="10μ" x="7.62" y="5.715" rot="R270"/>
-<element name="C3" library="rcl" package="C1206" value="10μ" x="17.145" y="5.715" rot="R270"/>
-<element name="LSP1" library="solpad" package="LSP10" value="LSP10" x="1.905" y="10.16"/>
-<element name="LSP2" library="solpad" package="LSP10" value="LSP10" x="17.145" y="1.905"/>
+<element name="R8" library="resistor" package="R1206" value="100" x="35.56" y="4.445" smashed="yes" rot="R90">
+<attribute name="NAME" x="34.417" y="3.048" size="1.27" layer="25" rot="R90"/>
+<attribute name="VALUE" x="37.973" y="3.048" size="1.27" layer="27" rot="R90"/>
+</element>
+<element name="L1" library="inductor-sumida" package="CR43" value="4.7μ" x="3.175" y="5.08" smashed="yes">
+<attribute name="NAME" x="0.9525" y="8.5725" size="1.016" layer="25" ratio="18"/>
+<attribute name="VALUE" x="0.9525" y="0.9525" size="0.8128" layer="27" ratio="10"/>
+</element>
+<element name="IC1" library="Gumix" package="TSOT23-6_DDC" value="TPS61070DDC" x="11.43" y="4.445" smashed="yes">
+<attribute name="MF" value="" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
+<attribute name="MPN" value="TPS61070DDCR" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
+<attribute name="NAME" x="10.16" y="6.35" size="1.27" layer="25"/>
+<attribute name="OC_FARNELL" value="1461062" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
+<attribute name="OC_NEWARK" value="64M3125" x="11.43" y="4.445" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="10.16" y="1.27" size="1.27" layer="27"/>
+</element>
+<element name="R9" library="resistor" package="R1206" value="1.5M" x="10.16" y="10.16" smashed="yes">
+<attribute name="NAME" x="8.763" y="11.303" size="1.27" layer="25"/>
+<attribute name="VALUE" x="8.763" y="7.747" size="1.27" layer="27"/>
+</element>
+<element name="R10" library="resistor" package="R1206" value="220k" x="17.78" y="10.16" smashed="yes">
+<attribute name="NAME" x="16.383" y="11.303" size="1.27" layer="25"/>
+<attribute name="VALUE" x="16.383" y="7.747" size="1.27" layer="27"/>
+</element>
+<element name="C2" library="rcl" package="C1206" value="10μ" x="7.62" y="5.715" smashed="yes" rot="R270">
+<attribute name="NAME" x="8.89" y="6.985" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="5.08" y="6.985" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="C3" library="rcl" package="C1206" value="10μ" x="17.145" y="5.715" smashed="yes" rot="R270">
+<attribute name="NAME" x="18.415" y="6.985" size="1.27" layer="25" rot="R270"/>
+<attribute name="VALUE" x="14.605" y="6.985" size="1.27" layer="27" rot="R270"/>
+</element>
+<element name="LSP1" library="solpad" package="LSP10" value="LSP10" x="1.905" y="10.16" smashed="yes">
+<attribute name="NAME" x="0.635" y="11.43" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="1.905" y="10.414" size="0.0254" layer="27"/>
+</element>
+<element name="LSP2" library="solpad" package="LSP10" value="LSP10" x="17.145" y="1.905" smashed="yes">
+<attribute name="NAME" x="15.875" y="3.175" size="1.27" layer="25" ratio="10"/>
+<attribute name="VALUE" x="17.145" y="2.159" size="0.0254" layer="27"/>
+</element>
 </elements>
 <signals>
 <signal name="S$1">
@@ -2726,14 +2802,12 @@ design rules under a new name.</description>
 </signal>
 <signal name="GND">
 <contactref element="U$1" pad="10"/>
-<contactref element="U$1" pad="10"/>
 <contactref element="C1" pad="2"/>
 <contactref element="D1" pad="CATHODE2"/>
 <contactref element="D1" pad="CATHODE1"/>
 <contactref element="R10" pad="2"/>
 <contactref element="IC1" pad="2"/>
 <contactref element="C2" pad="2"/>
-<contactref element="IC1" pad="2"/>
 <contactref element="C3" pad="2"/>
 <contactref element="S1" pad="2"/>
 <contactref element="S2" pad="2"/>
@@ -2783,7 +2857,6 @@ design rules under a new name.</description>
 <signal name="V+">
 <contactref element="U$1" pad="20"/>
 <contactref element="R1" pad="1"/>
-<contactref element="U$1" pad="20"/>
 <contactref element="C1" pad="1"/>
 <contactref element="R7" pad="1"/>
 <contactref element="R8" pad="1"/>
@@ -2970,6 +3043,13 @@ design rules under a new name.</description>
 <wire x1="3.81" y1="19.05" x2="5.08" y2="20.32" width="0.6" layer="1"/>
 </signal>
 </signals>
+<mfgpreviewcolors>
+<mfgpreviewcolor name="soldermaskcolor" color="0xC8008000"/>
+<mfgpreviewcolor name="silkscreencolor" color="0xFFFEFEFE"/>
+<mfgpreviewcolor name="backgroundcolor" color="0xFF282828"/>
+<mfgpreviewcolor name="coppercolor" color="0xFFFFBF00"/>
+<mfgpreviewcolor name="substratecolor" color="0xFF786E46"/>
+</mfgpreviewcolors>
 </board>
 </drawing>
 </eagle>
