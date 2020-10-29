@@ -7340,21 +7340,21 @@ drill 1.0 mm</description>
 <junction x="73.66" y="12.7"/>
 </segment>
 </net>
-<net name="N$5" class="0">
+<net name="RED1" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="48.26" y1="25.4" x2="48.26" y2="22.86" width="0.1524" layer="91"/>
 <pinref part="T1" gate="G1" pin="B"/>
 </segment>
 </net>
-<net name="N$6" class="0">
+<net name="GREEN1" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="T2" gate="G1" pin="B"/>
 <wire x1="63.5" y1="25.4" x2="63.5" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$7" class="0">
+<net name="BLUE1" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="78.74" y1="25.4" x2="78.74" y2="22.86" width="0.1524" layer="91"/>
@@ -7393,7 +7393,7 @@ drill 1.0 mm</description>
 <wire x1="43.18" y1="12.7" x2="50.8" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$11" class="0">
+<net name="RED2" class="0">
 <segment>
 <pinref part="T1" gate="G1" pin="C"/>
 <wire x1="53.34" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
@@ -7401,7 +7401,7 @@ drill 1.0 mm</description>
 <wire x1="55.88" y1="17.78" x2="55.88" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$12" class="0">
+<net name="GREEN2" class="0">
 <segment>
 <pinref part="T2" gate="G1" pin="C"/>
 <wire x1="68.58" y1="17.78" x2="71.12" y2="17.78" width="0.1524" layer="91"/>
