@@ -2677,7 +2677,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="12.065" y="31.115" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="12.065" y="33.02" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="R6" library="resistor" package="R1206" value="5.6k" x="16.51" y="27.305" smashed="yes" rot="R180">
+<element name="R6" library="resistor" package="R1206" value="10k" x="16.51" y="27.305" smashed="yes" rot="R180">
 <attribute name="NAME" x="17.907" y="26.162" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="17.907" y="29.718" size="1.27" layer="27" rot="R180"/>
 </element>
@@ -2696,11 +2696,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="40.132" y="26.162" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="40.132" y="29.718" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R8" library="resistor" package="R1206" value="90" x="12.7" y="9.525" smashed="yes" rot="R180">
+<element name="R8" library="resistor" package="R1206" value="100" x="12.7" y="9.525" smashed="yes" rot="R180">
 <attribute name="NAME" x="14.097" y="8.382" size="1.27" layer="25" rot="R180"/>
 <attribute name="VALUE" x="14.097" y="11.938" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="4V_PAD" library="solpad" package="LSP10" value="LSP10" x="13.97" y="5.08" smashed="yes">
+<element name="5V_PAD" library="solpad" package="LSP10" value="LSP10" x="13.97" y="5.08" smashed="yes">
 <attribute name="NAME" x="12.7" y="6.35" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="13.97" y="5.334" size="0.0254" layer="27"/>
 </element>
@@ -2884,7 +2884,7 @@ design rules under a new name.</description>
 <contactref element="R7" pad="1"/>
 <contactref element="R8" pad="1"/>
 <contactref element="T3" pad="1"/>
-<contactref element="4V_PAD" pad="MP"/>
+<contactref element="5V_PAD" pad="MP"/>
 <wire x1="25.4" y1="3.81" x2="29.21" y2="3.81" width="1" layer="1"/>
 <wire x1="29.21" y1="3.81" x2="30.48" y2="3.81" width="1" layer="1"/>
 <wire x1="45.085" y1="22.377" x2="40.157" y2="27.305" width="1.2" layer="1"/>

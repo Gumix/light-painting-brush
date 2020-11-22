@@ -7141,17 +7141,17 @@ drill 1.0 mm</description>
 <part name="T1" library="transistor" deviceset="2N3904" device=""/>
 <part name="T2" library="transistor" deviceset="2N3904" device=""/>
 <part name="T3" library="transistor" deviceset="2N3904" device=""/>
-<part name="R6" library="resistor" deviceset="R-EU_" device="R1206" value="5.6k"/>
+<part name="R6" library="resistor" deviceset="R-EU_" device="R1206" value="10k"/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="R1206" value="10k"/>
 <part name="R5" library="resistor" deviceset="R-EU_" device="R1206" value="10k"/>
 <part name="D1" library="Gumix" deviceset="LED-RGB-CC-THRU" device="DIFFUSE"/>
 <part name="R7" library="resistor" deviceset="R-EU_" device="R1206" value="100"/>
-<part name="R8" library="resistor" deviceset="R-EU_" device="R1206" value="90"/>
+<part name="R8" library="resistor" deviceset="R-EU_" device="R1206" value="100"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="4V_PAD" library="solpad" deviceset="LSP10" device=""/>
+<part name="5V_PAD" library="solpad" deviceset="LSP10" device=""/>
 <part name="GND_PAD" library="solpad" deviceset="LSP10" device=""/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="VCC" device=""/>
@@ -7245,7 +7245,7 @@ drill 1.0 mm</description>
 <instance part="GND9" gate="1" x="33.02" y="7.62" smashed="yes">
 <attribute name="VALUE" x="30.48" y="5.08" size="1.778" layer="96"/>
 </instance>
-<instance part="4V_PAD" gate="1" x="-27.94" y="-2.54" smashed="yes">
+<instance part="5V_PAD" gate="1" x="-27.94" y="-2.54" smashed="yes">
 <attribute name="NAME" x="-29.21" y="0.381" size="1.778" layer="95"/>
 </instance>
 <instance part="GND_PAD" gate="1" x="-15.24" y="-2.54" smashed="yes">
@@ -7484,7 +7484,7 @@ drill 1.0 mm</description>
 </segment>
 <segment>
 <wire x1="-33.02" y1="-2.54" x2="-33.02" y2="-10.16" width="0.1524" layer="91"/>
-<pinref part="4V_PAD" gate="1" pin="MP"/>
+<pinref part="5V_PAD" gate="1" pin="MP"/>
 <wire x1="-27.94" y1="-10.16" x2="-27.94" y2="-5.08" width="0.1524" layer="91"/>
 <wire x1="-33.02" y1="-10.16" x2="-27.94" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="P+7" gate="VCC" pin="VCC"/>
