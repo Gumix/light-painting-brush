@@ -95,7 +95,10 @@ static void init(void)
 // Timer/Counter0 Overflow Interrupt (2 kHz)
 ISR(TIMER0_OVF_vect)
 {
-	if (BTN2_PRESSED)
+	// Based on "A Guide to Debouncing" by Jack G. Ganssle
+	static uint16_t btn2_state;
+	btn2_state = (btn2_state << 1) | !BTN2_PRESSED | 0xe000;
+	if (btn2_state == 0xf000)
 		switch_color();
 
 	switch_leds(BTN1_PRESSED);
