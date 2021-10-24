@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include <stdbool.h>
 #include <avr/io.h>
 #include <util/delay.h>
@@ -5,6 +6,39 @@
 #define RED   OCR0A	// PB2
 #define GREEN OCR1A	// PB3
 #define BLUE  OCR1B	// PB4
+
+typedef struct
+{
+	uint8_t r, g, b;
+} color_t;
+
+static const color_t palette[] =
+{
+	{ 255, 0,   0   },	// Red
+	{ 255, 128, 0   },	// Orange
+	{ 255, 255, 0   },	// Yellow
+	{ 0,   255, 0   },	// Green
+	{ 0,   255, 255 },	// Cyan
+	{ 0,   128, 255 },	// Azure
+	{ 0,   0,   255 },	// Blue
+	{ 128, 0,   255 },	// Violet
+	{ 255, 0,   255 },	// Magenta
+	{ 255, 0,   128 }	// Rose
+};
+
+#define NUM_COLORS	(sizeof(palette) / sizeof(palette[0]))
+
+static void switch_color()
+{
+	static size_t color_idx;
+
+	color_t c = palette[color_idx];
+	RED   = c.r;
+	GREEN = c.g;
+	BLUE  = c.b;
+
+	color_idx = (color_idx + 1) % NUM_COLORS;
+}
 
 static void init(void)
 {
@@ -26,17 +60,7 @@ int main()
 
 	while (true)
 	{
-		RED   = 255;
-		GREEN = 64;
-		BLUE  = 64;
-		_delay_ms(1000);
-		RED   = 64;
-		GREEN = 255;
-		BLUE  = 64;
-		_delay_ms(1000);
-		RED   = 64;
-		GREEN = 64;
-		BLUE  = 255;
-		_delay_ms(1000);
+		switch_color();
+		_delay_ms(100);
 	}
 }
